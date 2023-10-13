@@ -27,15 +27,16 @@ First, I install microk8s on each node. Run below command
 ```
 sudo snap install microk8s --classic
 ```
-On Machine No 2 (Cloud), we execute the join command to get join key for other node.
+Next, on Machine No 2 (Cloud), execute the following command to obtain the join key for the other nodes:
 ```
 microk8s.add-node
 ```
+Once you have obtained the join key, use it to add each node to the cluster created by Machine No 2. Every time we execute the join command, I will need to re-run the add-node command.
 
-Join each node to the cluster created by Machine No 2 (note that each time we execute the join command, we need to rerun the add-node).
+After successfully joining the nodes, proceed with configuring network interfaces to address any connection issues, especially API server timeout problems. The guidance on network interface configuration is here (https://microk8s.io/docs/configure-host-interfaces)
 
-After finish join, do some network interface configuration (https://microk8s.io/docs/configure-host-interfaces) to fix connection problems (mostly the API server timeout problem). 
-Check the node status with this command
+To check the status of each node in the cluster, use the following command:
+
 ```
 microk8s.kubectl get no -owide
 ```
@@ -92,6 +93,8 @@ For each microservice, I wrote two files: deployment.yaml and service.yaml. For 
 
 The cloud_platform is the Receipt Microservice, gpu_platform is the OCR Engine and line_item is the Layout Analytic Engine. OCR service is my tensorflow serving deployment.
 
-Each service, except the Tensorflow Serving, use the Flask + Gunicorn stacks. Design of each service will look like
+Each service, except the Tensorflow Serving, use the Flask + Gunicorn stacks. Design of the Receipt Service will look like 
 
 ![Component](https://github.com/truongpl/truongpl.github.io/raw/main/docs/assets/Component.png)
+
+The main idea is that each endpoint will have a service that serves the endpoints business, each service will handle the call to Tensorflow Serving pods to get Model predictions, post process the data and insert the record to database.
