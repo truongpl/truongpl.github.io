@@ -196,12 +196,13 @@ Finally, the system is live. I have implemented a gradio server for demonstratio
 Some results
 
 With "Easy Receipt," I achieve STP (Straight Through Processing), which means that receipts are seamlessly and automatically processed without the need for manual data entry. This efficient workflow ensures a streamlined and automated handling of receipt data.
-[!Result_1](https://github.com/truongpl/truongpl.github.io/raw/main/docs/assets/Result_1.png)
+![Result_1](https://github.com/truongpl/truongpl.github.io/raw/main/docs/assets/Result_1.png)
 
-In the case of a lengthy receipt, the ability to detect and capture the majority of line items is a significant advantage. This capability translates into substantial time and cost savings in production. It ensures that a large portion of the receipt's content is accurately recognized and processed, reducing the need for manual intervention and enhancing overall operational efficiency.[!Result_2](https://github.com/truongpl/truongpl.github.io/raw/main/docs/assets/Result_2.png)
+In the case of a lengthy receipt, the ability to detect and capture the majority of line items is a significant advantage. This capability translates into substantial time and cost savings in production. It ensures that a large portion of the receipt's content is accurately recognized and processed, reducing the need for manual intervention and enhancing overall operational efficiency.
+![Result_2](https://github.com/truongpl/truongpl.github.io/raw/main/docs/assets/Result_2.png)
 
 When dealing with Vietnamese receipts, it's important to acknowledge the need for ongoing improvement in your OCR (Optical Character Recognition) model, especially if the accuracy is currently suboptimal. Generating accurate Vietnamese words from a corpus can be challenging
-[!Result_3](https://github.com/truongpl/truongpl.github.io/raw/main/docs/assets/Result_3.png)
+![Result_3](https://github.com/truongpl/truongpl.github.io/raw/main/docs/assets/Result_3.png)
 
 
 In overall, there are some room for improvements:
