@@ -89,3 +89,9 @@ For each microservice, I wrote two files: deployment.yaml and service.yaml. For 
     ├── website_service.yaml
     └── website.yaml
 ```
+
+The cloud_platform is the Receipt Microservice, gpu_platform is the OCR Engine and line_item is the Layout Analytic Engine. OCR service is my tensorflow serving deployment.
+
+Each service, except the Tensorflow Serving, use the Flask + Gunicorn stacks. Design of each service will look like
+
+![Component](https://github.com/truongpl/truongpl.github.io/raw/main/docs/assets/Component.png)

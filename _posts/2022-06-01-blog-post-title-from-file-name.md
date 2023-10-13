@@ -54,7 +54,7 @@ In summary, the traditional two-step Text Spotting approach offers certain advan
 
 Another reason that: I have some code for creating the synthetic text image for the Recognition, I can reuse that module.
 
-##### Training Text Spotting 
+#### Training Text Spotting 
 There are many open source (EAST, PixelLink, CRAFT...), both on PyTorch and Tensorflow. I decided to use CRAFT and attention OCR for my text recognition
 
 ![Text Detection Compare](https://github.com/truongpl/truongpl.github.io/raw/main/docs/assets/TD_Compare.png)
