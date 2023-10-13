@@ -26,10 +26,10 @@ I have chosen to go with option 2, using Netmaker as a VPN, primarily due to its
 
 | Machine Number | Purpose                          | Type    | System specs                        |
 |----------------|----------------------------------|---------|-------------------------------------|
-| 1              | VPN master                       | Cloud   | Ubuntu 20.04.5 LTS 1 core - 4GB           |
+| 1              | VPN master (Netmaker host)       | Cloud   | Ubuntu 20.04.5 LTS 1 core - 4GB           |
 | 2              | Receipt service                  | Cloud   | Ubuntu 20.04.5 LTS 2 core - 8GB           |
-| 3              | OCR Interface Analytic Interface | Cloud   | Ubuntu 20.04.5 LTS 2 cores - 8GB          |
-| 4              | Workstation node                 | On Prem | Ubuntu 20.04.5 LTS 8 cores - 32GB Has GPU |
+| 3              | OCR Interface Analytic Interface | Cloud   | Ubuntu 22.04.2 LTS 2 cores - 8GB          |
+| 4              | Workstation node                 | On Prem | Ubuntu 22.04.2 LTS 8 cores - 32GB Has GPU |
 | 5              | Workstation node                 | On Prem | Ubuntu 20.04.5 LTS 8 cores - 32GB Has GPU |
 
 Using Netmaker as a VPN, our installation is simpler:
