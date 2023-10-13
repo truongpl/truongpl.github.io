@@ -213,4 +213,4 @@ In overall, there are some room for improvements:
 
 - Character Recognition for Vietnamese: Considering character-level recognition for Vietnamese text, rather than word-level recognition, is a practical approach. Vietnamese script can be challenging for OCR due to its unique diacritics and accents, so recognizing individual characters can help improve accuracy, especially when dealing with various fonts and writing styles.
 
-This marks the conclusion of the post on building a hybrid cluster. Thank you for taking the time to read.
+In the next post, I will cover the cost of building infrastructure and operation.
