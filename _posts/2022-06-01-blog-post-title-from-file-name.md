@@ -14,7 +14,7 @@ The system must meet the following criteria:
 ### Overall system design
 To ensure high uptime, I decide to deploy a part of system on cloud, it acts as an AI interface: serves the request from frontend and execute API call to AI Workstation. Overall design will look like:
 
-![System Architecture](https://truongpl.github.io/docs/assets/Mainflow.png)
+![System Architecture](https://github.com/truongpl/truongpl.github.io/raw/main/docs/assets/Mainflow.png)
 
 #### Some T-SQL Code
 
