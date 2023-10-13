@@ -16,6 +16,32 @@ To ensure high uptime, I decide to deploy a part of system on cloud, it acts as 
 
 ![System Architecture](https://github.com/truongpl/truongpl.github.io/raw/main/docs/assets/Mainflow.png)
 
+#### Bridging the network
+To establish a Kubernetes cluster, it is essential that each node in our network is visible to one another. Typically, our workstation is situated behind a router network, and we are presented with two options:
+
+- Port forwarding: This involves forwarding all ports from the WAN to the corresponding local node IP ports.
+- Utilizing a VPN: This method brings all nodes into a shared VPN.
+I have chosen to go with option 2, using Netmaker as a VPN, primarily due to its ease of use. Below is my settings:
+
+| Machine Number | Purpose                          | Type    | System specs                        |
+|----------------|----------------------------------|---------|-------------------------------------|
+| 1              | VPN master                       | Cloud   | Ubuntu 20.04.5 LTS 1 core - 4GB           |
+| 2              | Receipt service                  | Cloud   | Ubuntu 20.04.5 LTS 2 core - 8GB           |
+| 3              | OCR Interface Analytic Interface | Cloud   | Ubuntu 20.04.5 LTS 2 cores - 8GB          |
+| 4              | Workstation node                 | On Prem | Ubuntu 20.04.5 LTS 8 cores - 32GB Has GPU |
+| 5              | Workstation node                 | On Prem | Ubuntu 20.04.5 LTS 8 cores - 32GB Has GPU |
+
+Using Netmaker as a VPN, our installation is simpler:
+- Rent VPS with Ubuntu 20.04 LTS
+- Setup Netmaker on VPN master
+- Join the mesh network with Netclient
+- Create cluster on Machine 2,3,4,5 with Microk8s
+
+A sample visualization with Netmaker is below:
+![Netmaker Overview](https://github.com/truongpl/truongpl.github.io/raw/main/docs/assets/Netmaker.png)
+
+
+
 #### Some T-SQL Code
 
 ```tsql
