@@ -1,4 +1,4 @@
-## Creating a hybrid cloud-on prem AI system
+## Creating a hybrid cloud-on prem AI system (Part 1)
 
 Over the last four months, a childhood friend of mine, who holds a PhD in Mass Communications and Markting and is presently employed at RMIT University, has made the bold choice to establish an AI company. Their primary mission is to develop solutions aimed at securing government funding. Given the high costs associated with deploying a full-scale AI infrastructure on the cloud, I've opted for a hybrid system as a cost-effective alternative.
 

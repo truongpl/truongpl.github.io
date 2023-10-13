@@ -45,3 +45,47 @@ My cluster is ready for deployment:
 
 ![Cluster](https://github.com/truongpl/truongpl.github.io/raw/main/docs/assets/Cluster.png)
 
+#### Deployment
+For each microservice, I wrote two files: deployment.yaml and service.yaml. For ease of use, I decided to put all of the deployment into a repository like below:
+
+```bash
+.
+├── cert
+│   ├── custom_tls.yaml
+│   └── letsencrypt.yaml
+├── cloud_platform
+│   ├── cloud_platform_service.yaml
+│   └── cloud_platform.yaml
+├── core
+├── dashboard
+│   ├── dashboard_service.yaml
+│   └── dashboard.yaml
+├── demo
+│   ├── demo_service.yaml
+│   └── demo.yaml
+├── gpu_platform
+│   ├── gpu_platform_service.yaml
+│   └── gpu_platform.yaml
+├── ingress
+│   ├── ingress_backup.yaml
+│   └── ingress.yaml
+├── LICENSE
+├── line_item
+│   ├── line_item_service.yaml
+│   └── line_item.yaml
+├── ocr
+│   ├── ocr_platform_service.yaml
+│   └── ocr_platform.yaml
+├── redis
+│   └── redis.yaml
+├── secret
+│   └── secret.yaml
+├── timeout_imagepull
+│   └── config_map.yaml
+├── time_slicing
+│   └── time_slicing.yaml
+├── troubleshoot.guide
+└── website
+    ├── website_service.yaml
+    └── website.yaml
+```
