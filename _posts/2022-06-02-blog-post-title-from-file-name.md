@@ -97,7 +97,7 @@ Each service, except the Tensorflow Serving, use the Flask + Gunicorn stacks. De
 
 ![Component](https://github.com/truongpl/truongpl.github.io/raw/main/docs/assets/Component.png)
 
-The main idea is that each endpoint will have a service that serves the endpoints business, each service will handle the call to Tensorflow Serving pods to get Model predictions, post process the data and insert the record to database.
+The main idea is that each endpoint will have a service that serves the endpoints business, each service will handle the call to AI Interface to get Model predictions, post process the data and insert the record to database.
 
 
 A sample deployment.yaml
