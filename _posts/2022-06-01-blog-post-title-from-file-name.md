@@ -90,23 +90,18 @@ Text recognition:
 
 
 
-#### Some T-SQL Code
+#### Training Layout Analytic Model
+This problem falls within the realm of Named Entity Recognition (NER). My chosen approach is a conventional one, which involves the following steps: Image input is processed to obtain textual information, which is then fed into the BERT model for the purpose of word classification.
 
-```tsql
-SELECT This, [Is], A, Code, Block -- Using SSMS style syntax highlighting
-    , REVERSE('abc')
-FROM dbo.SomeTable s
-    CROSS JOIN dbo.OtherTable o;
-```
+As for the model is infamous, there isn't much to elaborate on. My strategy to enhance the accuracy involves expanding the dataset by acquiring additional receipts and labeling the following entities within them: [store_name, store_address, date, time, item_name, item_quantity, item_price, payment_method, total_expense, subtotal, tax]. Following fine-tuning, the model is saved in TensorFlow Serving format and made available for deployment alongside other models.
 
-#### Some PowerShell Code
+#### Performance of BERT
+In the majority of cases, my fine-tuned model exhibits lower accuracy when compared to the traditional model on benchmark datasets. However, it excels in actual receipt scenarios, where its performance is notably superior.
 
-```powershell
-Write-Host "This is a powershell Code block";
 
-# There are many other languages you can use, but the style has to be loaded first
+| Dataset    | BERT                                   | Finetune model                               |
+|------------|----------------------------------------|----------------------------------------------|
+| FUNSD      | Precision: 54.69% Recall: 67.1%% F1: 60.26% | Precision: 52.18% Recall: 63.49% F1: 57.28%  |
 
-ForEach ($thing in $things) {
-    Write-Output "It highlights it using the GitHub style"
-}
-```
+
+### Deployment
