@@ -10,7 +10,7 @@ I have a mining rig and borrowed some NVIDIA GeForce RTX 3060 GPUs for the works
 | Workstation 1 | PC: Intel Core I7-7700 Ram: 32Gb GPU: 2 x RTX 3060 SSD: 1TB HDD: 4TB | 1500$ |
 | Workstation 2 | PC: Intel Xeon E5-2680 Ram: 32Gb GPU: 2 x RTX 3060 SSD: 1TB HDD: 4TB | 2000$ |
 
-Each workstation is placed on different places and cost addition 50$ for static IP.
+Each workstation is placed on different places and cost an additional 50$ for static IP.
 
 ### Operation cost
 The cloud machines cost hosting fee, two workstations cost electricity and internet fee, db instance cost and storage cost
