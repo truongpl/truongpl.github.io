@@ -204,3 +204,9 @@ When dealing with Vietnamese receipts, it's important to acknowledge the need fo
 [!Result_3](https://github.com/truongpl/truongpl.github.io/raw/main/docs/assets/Result_3.png)
 
 
+In overall, there are some room for improvements:
+- Layout Information: Incorporating layout information by employing a hybrid model such as LayoutLM is an excellent suggestion. LayoutLM is designed to combine text and layout information, which can significantly improve the accuracy of text recognition on documents where the spatial arrangement of text matters, such as receipts and invoices.
+
+- Character Recognition for Vietnamese: Considering character-level recognition for Vietnamese text, rather than word-level recognition, is a practical approach. Vietnamese script can be challenging for OCR due to its unique diacritics and accents, so recognizing individual characters can help improve accuracy, especially when dealing with various fonts and writing styles.
+
+This marks the conclusion of the post on building a hybrid cluster. Thank you for taking the time to read.
