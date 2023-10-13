@@ -1,14 +1,20 @@
-## Blog Post Title From First Header
+## Creating a hybrid cloud-on prem AI system
 
-Due to a plugin called `jekyll-titles-from-headings` which is supported by GitHub Pages by default. The above header (in the markdown file) will be automatically used as the pages title.
+Over the last four months, a childhood friend of mine, who holds a PhD in Mass Communications and Markting and is presently employed at RMIT University, has made the bold choice to establish an AI company. Their primary mission is to develop solutions aimed at securing government funding. Given the high costs associated with deploying a full-scale AI infrastructure on the cloud, I've opted for a hybrid system as a cost-effective alternative.
 
-If the file does not start with a header, then the post title will be derived from the filename.
+The system must meet the following criteria:
+- Ensuring high uptime
+- Maintaining low operational costs
+- Delivering fast response times
+- Supporting easy integration and removal of models.
 
-This is a sample blog post. You can talk about all sorts of fun things here.
 
 ---
 
-### This is a header
+### Overall system design
+To ensure high uptime, I decide to deploy a part of system on cloud, it acts as an AI interface: serves the request from frontend and execute API call to AI Workstation. Overall design will look like:
+
+![System Architecture](assets/Mainflow.png)
 
 #### Some T-SQL Code
 
