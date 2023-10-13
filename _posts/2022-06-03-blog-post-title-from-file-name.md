@@ -3,7 +3,7 @@
 This post will cover the cost of building Infrastructure and operation
 
 ### Building workstation
-I have a mining rig, borrow some NVIDIA Geforce RTX 3060 for the workstation. I assemble two workstations with cost 1500$ and 2000$ each
+I have a mining rig and borrowed some NVIDIA GeForce RTX 3060 GPUs for the workstations. I assembled two workstations with costs of $1,500 and $2,000 each.
 
 | Number        | Specs                                                                | Cost  |
 |---------------|----------------------------------------------------------------------|-------|
@@ -32,7 +32,7 @@ My operation cost is:
 (14$ + 84$*2 + 50$*2 + 15$) + bandwidth cost = 297$ + bandwidth 
 ```
 ### Performance
-I created a multi thread code to spam the server, maximum request that it can handle is 25 requests (handled request = HTTP 200 response)
+I've created a multi-threaded code to stress test the server. The server can handle a maximum of 25 requests, and a successful handle is indicated by an HTTP 200 status code.
 
 | Image                   | Processing speed | Size of batch images | Average processing per image |
 |-------------------------|------------------|----------------------|------------------------------|
