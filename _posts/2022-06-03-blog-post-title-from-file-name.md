@@ -48,6 +48,6 @@ In summary, my system can process:
 Total = (60s / 1.8s) * 60 * 24 * 30 = 1.440.000 images per month
 ```
 
-Each ultra large image takes average is 4MB so the total band width a month will be 5625GB bandwith. This bandwidth is lower that that available bandwidth of Cloud
+Each ultra large image takes average is 4MB so the total band width a month will be 5625GB bandwith. This bandwidth is lower that that available bandwidth of Cloud.
 
 In overall, my cost is approximately 297$/month, very small in compare with a single instance g5.xlarge of AWS. This marks the conclusion of the post on building a hybrid cluster. Thank you for taking the time to read.
