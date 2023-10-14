@@ -91,7 +91,7 @@ Each service, except the Tensorflow Serving, use the Flask + Gunicorn stacks. De
 The main idea is that each endpoint will have a service that serves the endpoints business, each service will handle the call to AI Service (OCR Service and Layout Service) to get Model predictions, post process the data and insert the record to database.
 
 
-A sample deployment.yamls
+A sample deployment.yaml
 ```
 apiVersion: apps/v1
 kind: Deployment
