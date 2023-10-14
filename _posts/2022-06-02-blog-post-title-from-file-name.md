@@ -96,20 +96,20 @@ A sample deployment.yamls
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cloud-platform
+  name: document-service
   labels:
-    app: cloud-platform
+    app: document-service
     version: v1
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: cloud-platform
+      app: document-service
       version: v1
   template:
     metadata:
       labels:
-        app: cloud-platform
+        app: document-service
         version: v1
     spec:
       imagePullSecrets:
@@ -124,16 +124,20 @@ spec:
                 values:
                 - digitalocean 
       containers:
-      - name: cloud-platform
+      - name: document-service
         image: 
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
         command: ["gunicorn", "--bind","0:8000","main:app"]
         env:
-        - name: CORE_IP
-          value: gpu-platform.default.svc.cluster.local
-        - name: CORE_PORT # This port is the services port define in service.yaml
+        - name: OCR-IP
+          value: ocr-service.default.svc.cluster.local
+        - name: OCR_PORT
+          value: "80"
+        - name: LAYOUT_IP
+          value: layout-service.default.svc.cluster.local
+        - name: LAYOUT_PORT
           value: "80"
         - name: POSTGRES_USER # DB User
           valueFrom:
@@ -162,7 +166,7 @@ spec:
               key: POSTGRES_PORT
         resources:
           limits:
-            memory: 2Gi
+            memory: 1Gi
             cpu: "1"
           requests:
             memory: 1Gi
