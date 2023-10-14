@@ -1,6 +1,6 @@
 ## Creating a hybrid cloud-on prem AI system (Part 2)
 
-This post will cover the deployment section on a hybrid cloud-on prem cluster
+This post will cover the deployment section on a hybrid cloud-on prem cluster.
 
 ---
 
@@ -18,7 +18,7 @@ Let's take a look at the overall design again
 | 5              | Workstation node                 | On Prem | Ubuntu 20.04.5 LTS 8 cores - 32GB Has GPU |
 
 
-We need to install Microk8s on 2,3,4,5. The details are provided in the next section
+We need to install Microk8s on 2,3,4,5. The details are provided in the next section.
 
 
 #### Setup Microk8s and join cluster
@@ -175,7 +175,7 @@ spec:
 I use NodeAffinity to let Kubernetes choose the right node for pods. The confidential keys is wrapped into system-secret secret. 
 After finish all deployment.yaml, the next step is expose the api to Internet. This steps requires the ownership of domain. 
 
-Microk8s has already support me to do this by enable the metallb
+Microk8s has already support me to do this by enable the metallb.
 
 ```
 microk8s enable ingress metallb
@@ -187,9 +187,9 @@ Finally, the system is live. I have implemented a gradio server for demonstratio
 
 The demo is fairly simple, it even works with iPhone (thanks to Gradio): Select a receipt or invoice -> press Submit button -> get the extraction.
 
-Some results
+#### Testing results
 
-With "Easy Receipt," I achieve STP (Straight Through Processing), which means that receipts are seamlessly and automatically processed without the need for manual data entry. This efficient workflow ensures a streamlined and automated handling of receipt data.
+With a common receipt I achieve STP (Straight Through Processing), which means that receipts are seamlessly and automatically processed without the need for manual data entry. This efficient workflow ensures a streamlined and automated handling of receipt data.
 ![Result_1](https://github.com/truongpl/truongpl.github.io/raw/main/docs/assets/Result_1.png)
 
 In the case of a lengthy receipt, the ability to detect and capture the majority of line items is a significant advantage. This capability translates into substantial time and cost savings in production. It ensures that a large portion of the receipt's content is accurately recognized and processed, reducing the need for manual intervention and enhancing overall operational efficiency.

@@ -8,7 +8,6 @@ The system must meet the following criteria:
 - Delivering fast response times
 - Supporting easy integration and removal of models.
 
-
 ---
 
 ### Overall system design
@@ -89,7 +88,7 @@ Text recognition:
 
 
 #### Training Layout Analytic Model
-This problem falls within the realm of Named Entity Recognition (NER). My chosen approach is a conventional one, which involves the following steps: Image -> OCR Engine -> Text -> BERT -> Word classification
+This problem falls within the realm of Named Entity Recognition (NER). My chosen approach is a conventional one, which involves the following steps: Image -> OCR Engine -> Text -> BERT -> Word classification.
 
 As the model is infamous, there isn't much to elaborate on. My strategy to enhance the accuracy involves expanding the dataset by acquiring additional receipts and labeling the following entities within them: [store_name, store_address, date, time, item_name, item_quantity, item_price, payment_method, total_expense, subtotal, tax]. Following fine-tuning, the model is saved in TensorFlow Serving format and made available for deployment alongside other models.
 
