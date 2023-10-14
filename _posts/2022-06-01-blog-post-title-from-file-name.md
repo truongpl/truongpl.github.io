@@ -76,15 +76,15 @@ Text detection:
 
 | Dataset    | Original model                            | Finetune model                               |
 |------------|-------------------------------------------|----------------------------------------------|
-| ICDAR 2013 | `red Precision`: 96.5% `red Recall`: 93.6% `red F1`: 95.03% | `red Precision`: 92.7% `red Recall`: 89.3% `red F1`: 90.96%    |
-| ICDAR 2015 | `red Precision`: 93.1% `red Recall`: 88.5% `red F1`: 90.7%  | `red Precision`: 93.6% `red Recall`: 86.2% `red F1`: 89.7% |
+| ICDAR 2013 | `Precision`: 96.5% `Recall`: 93.6% `F1`: 95.03% | `Precision`: 92.7% `Recall`: 89.3% `F1`: 90.96%    |
+| ICDAR 2015 | `Precision`: 93.1% `Recall`: 88.5% `F1`: 90.7%  | `Precision`: 93.6% `Recall`: 86.2% `F1`: 89.7% |
 
 
 Text recognition:
 
 | Dataset        | Case sensitive | Case insensitive |
 |----------------|----------------|------------------|
-| COCO Text 2017 | `red WER`: 65.4%     | `red WER`: 37.2%       |
+| COCO Text 2017 | `WER`: 65.4%     | `WER`: 37.2%       |
 
 
 
@@ -99,7 +99,7 @@ In the majority of cases, my fine-tuned model has lower accuracy when compared t
 
 | Dataset    | BERT                                   | Finetune model                               |
 |------------|----------------------------------------|----------------------------------------------|
-| FUNSD      | `red Precision`: 54.69% `red Recall`: 67.1% `red F1`: 60.26% | `red Precision`: 52.18% `red Recall`: 63.49% `red F1`: 57.28%  |
+| FUNSD      | `Precision`: 54.69% `Recall`: 67.1% `F1`: 60.26% | `Precision`: 52.18% `Recall`: 63.49% `F1`: 57.28%  |
 
 
 In the next post, I will cover about the deployment steps of get High Availability performance
