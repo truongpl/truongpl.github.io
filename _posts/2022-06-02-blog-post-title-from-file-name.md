@@ -13,7 +13,7 @@ Let's take a look at the overall design again
 |----------------|----------------------------------|---------|-------------------------------------|
 | 1              | VPN master (Netmaker host)       | Cloud   | Ubuntu 20.04.5 LTS 1 core - 4GB           |
 | 2              | Receipt service                  | Cloud   | Ubuntu 20.04.5 LTS 2 core - 8GB           |
-| 3              | OCR Interface Analytic Interface | Cloud   | Ubuntu 22.04.2 LTS 2 cores - 8GB          |
+| 3              | OCR Service/Analytic Service     | Cloud   | Ubuntu 22.04.2 LTS 2 cores - 8GB          |
 | 4              | Workstation node                 | On Prem | Ubuntu 22.04.2 LTS 8 cores - 32GB Has GPU |
 | 5              | Workstation node                 | On Prem | Ubuntu 20.04.5 LTS 8 cores - 32GB Has GPU |
 
@@ -91,9 +91,7 @@ For each microservice, I wrote two files: deployment.yaml and service.yaml. For 
     └── website.yaml
 ```
 
-The cloud_platform is the Receipt Microservice, gpu_platform is the OCR Engine and line_item is the Layout Analytic Engine. OCR service is my tensorflow serving deployment.
-
-Each service, except the Tensorflow Serving, use the Flask + Gunicorn stacks. Design of the Receipt Service will look like 
+Each service, except the Tensorflow Serving, use the Flask + Gunicorn stacks. Design of the Document Service will look like 
 
 ![Component](https://github.com/truongpl/truongpl.github.io/raw/main/docs/assets/Component.png)
 

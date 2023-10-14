@@ -19,7 +19,7 @@ The cloud machines cost hosting fee, two workstations cost electricity and inter
 |----------------|----------------------|---------------------------------|------|-------------------------|
 | 1              | VPN Master           | Ubuntu 20.04.5 LTS 1 core - 4GB | 14$  | Cloud fee               |
 | 2              | Receipt service      | Ubuntu 20.04.5 LTS 2 core - 8GB | 84$  | Cloud fee               |
-| 3              | OCR/Layout Interface | Ubuntu 20.04.5 LTS 2 core - 8GB | 84$  | Cloud fee               |
+| 3              | OCR/Layout Service   | Ubuntu 20.04.5 LTS 2 core - 8GB | 84$  | Cloud fee               |
 | 4              | Workstation 1        | Above                           | 50$  | Electricity + internet fee |
 | 5              | Workstation 1        | Above                           | 50$  | Electricity + internet fee |
 | 6              | DB Instance          |                                 | 15$  | Cloud fee               |
