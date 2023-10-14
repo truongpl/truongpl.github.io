@@ -13,7 +13,7 @@ Let's take a look at the overall design again
 |----------------|----------------------------------|---------|-------------------------------------|
 | 1              | VPN master (Netmaker host)       | Cloud   | Ubuntu 20.04.5 LTS 1 core - 4GB           |
 | 2              | Receipt service                  | Cloud   | Ubuntu 20.04.5 LTS 2 core - 8GB           |
-| 3              | OCR Service/Analytic Service     | Cloud   | Ubuntu 22.04.2 LTS 2 cores - 8GB          |
+| 3              | OCR Service/Layout   Service     | Cloud   | Ubuntu 22.04.2 LTS 2 cores - 8GB          |
 | 4              | Workstation node                 | On Prem | Ubuntu 22.04.2 LTS 8 cores - 32GB Has GPU |
 | 5              | Workstation node                 | On Prem | Ubuntu 20.04.5 LTS 8 cores - 32GB Has GPU |
 
@@ -42,8 +42,6 @@ microk8s.kubectl get no -owide
 ```
 
 My cluster is ready for deployment:
-
-
 ![Cluster](https://github.com/truongpl/truongpl.github.io/raw/main/docs/assets/Cluster.png)
 
 #### Deployment
