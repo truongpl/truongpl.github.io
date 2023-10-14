@@ -186,7 +186,7 @@ microk8s enable ingress metallb
 ```
 Set the two IPs of cloud nodes to the LoadBalancer's configuration when asked. After this steps, I configure the DNS record on Domain Administration to point to the IP of two nodes.
 
-Finally, the system is live. I have implemented a gradio server for demonstration, located at (https://demo.ai4s.vn).
+Finally, the system is live. I have implemented a gradio server for demonstration, located at [https://demo.ai4s.vn](https://demo.ai4s.vn).
 ![Demo_Screen](https://github.com/truongpl/truongpl.github.io/raw/main/docs/assets/App_screenshot.png)
 
 The demo is fairly simple, it even works with iPhone (thanks to Gradio): Select a receipt or invoice -> press Submit button -> get the extraction.
