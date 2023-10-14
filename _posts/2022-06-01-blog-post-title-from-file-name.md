@@ -28,7 +28,7 @@ I have chosen to go with option 2, using Netmaker as a VPN, primarily due to its
 |----------------|----------------------------------|---------|-------------------------------------|
 | 1              | VPN master (Netmaker host)       | Cloud   | Ubuntu 20.04.5 LTS 1 core - 4GB           |
 | 2              | Receipt service                  | Cloud   | Ubuntu 20.04.5 LTS 2 core - 8GB           |
-| 3              | OCR Interface Analytic Interface | Cloud   | Ubuntu 22.04.2 LTS 2 cores - 8GB          |
+| 3              | OCR Service/Analytic Service     | Cloud   | Ubuntu 22.04.2 LTS 2 cores - 8GB          |
 | 4              | Workstation node                 | On Prem | Ubuntu 22.04.2 LTS 8 cores - 32GB Has GPU |
 | 5              | Workstation node                 | On Prem | Ubuntu 20.04.5 LTS 8 cores - 32GB Has GPU |
 
@@ -44,9 +44,9 @@ A sample visualization with Netmaker is below:
 In the next sections, I will describe the steps to build OCR Engine and Layout Analytic Engine
 
 #### Building OCR Engine
-The conventional Optical Character Recognition (OCR) process, known as Text Spotting, involves two sequential steps: firstly, locating text within an image, and secondly, recognizing the text that has been located. While there are approaches that seek to streamline this entire procedure into an end-to-end solution, where a single network is trained to handle both tasks, I personally find this approach less appealing. This is due to a few key factors, including its practicality and its applicability in real-world scenarios. Here's why:
+The conventional Optical Character Recognition (OCR) process, known as Text Spotting, involves two sequential steps: firstly, locating text within an image, and secondly, recognizing the text that has been located. While there are approaches that seek to streamline this entire procedure into an end-to-end solution, where a multimodal network is trained to handle both tasks, I personally find this approach less appealing. This is due to a few key factors, including its practicality and its applicability in real-world scenarios. Here's why:
 
-Text Spotting encompasses two distinct loss components: one related to text detection and the other tied to text recognition. Merging these two losses into a single unified loss function is not ideal from a technical standpoint.
+Text Spotting encompasses two distinct loss components: one related to text detection and the other tied to text recognition. Merging these two losses into a single loss function is not ideal from a technical standpoint.
 
 In practice, adopting an end-to-end solution can restrict the adaptability of integrating new State-of-the-Art (SOTA) techniques for each of these tasks. Consider a scenario where a superior SOTA method emerges for Text Detection. To leverage this advancement, one would need to retrain the entire network. Even if the recognition layer is frozen, it would still be necessary to retrain both the Text Detection path and the common path, which could be quite cumbersome.
 
@@ -55,7 +55,7 @@ In summary, the traditional two-step Text Spotting approach offers certain advan
 Another reason that: I have some code for creating the synthetic text image for the Recognition, I can reuse that module.
 
 #### Training Text Spotting 
-There are many open source (EAST, PixelLink, CRAFT...), both on PyTorch and Tensorflow. I decided to use CRAFT and attention OCR for my text recognition
+There are many open source (EAST, PixelLink, CRAFT...), both on PyTorch and Tensorflow. I decided to use CRAFT and Attention OCR for my text recognition
 
 ![Text Detection Compare](https://github.com/truongpl/truongpl.github.io/raw/main/docs/assets/TD_Compare.png)
 
@@ -72,21 +72,19 @@ I generated synthetic image for text recognition from a 6 million words corpus a
 ![Gen_3](https://github.com/truongpl/truongpl.github.io/raw/main/docs/assets/5.jpg)
 
 #### Performance of Text Spotting
-Training and test the Text Detection and Text Recognition give below accuracy
-
 Text detection:
 
 | Dataset    | Original model                            | Finetune model                               |
 |------------|-------------------------------------------|----------------------------------------------|
-| ICDAR 2013 | Precision: 96.5% Recall: 93.6% F1: 95.03% | Precision: 92.7% Recall: 89.3% F1: 90.96%    |
-| ICDAR 2015 | Precision: 93.1% Recall: 88.5% F1: 90.7%  | Precision: 93.6% Recall: 86.2% Recall: 89.7% |
+| ICDAR 2013 | $${\color{red}Precision}$$: 96.5% $${\color{red}Recall}$$: 93.6% $${\color{red}F1}$$: 95.03% | $${\color{red}Precision}$$: 92.7% $${\color{red}Recall}$$: 89.3% $${\color{red}F1}$$: 90.96%    |
+| ICDAR 2015 | $${\color{red}Precision}$$: 93.1% $${\color{red}Recall}$$: 88.5% $${\color{red}F1}$$: 90.7%  | $${\color{red}Precision}$$: 93.6% $${\color{red}Recall}$$: 86.2% $${\color{red}F1}$$: 89.7% |
 
 
 Text recognition:
 
 | Dataset        | Case sensitive | Case insensitive |
 |----------------|----------------|------------------|
-| COCO Text 2017 | WER: 65.4%     | WER: 37.2%       |
+| COCO Text 2017 | $${\color{red}WER}$$: 65.4%     | $${\color{red}WER}$$: 37.2%       |
 
 
 
@@ -95,13 +93,13 @@ This problem falls within the realm of Named Entity Recognition (NER). My chosen
 
 As the model is infamous, there isn't much to elaborate on. My strategy to enhance the accuracy involves expanding the dataset by acquiring additional receipts and labeling the following entities within them: [store_name, store_address, date, time, item_name, item_quantity, item_price, payment_method, total_expense, subtotal, tax]. Following fine-tuning, the model is saved in TensorFlow Serving format and made available for deployment alongside other models.
 
-#### Performance of BERT
+#### Performance of Layout Analytic
 In the majority of cases, my fine-tuned model has lower accuracy when compared to the traditional model on benchmark datasets. However, with receipt scenarios, its performance is notably superior.
 
 
 | Dataset    | BERT                                   | Finetune model                               |
 |------------|----------------------------------------|----------------------------------------------|
-| FUNSD      | Precision: 54.69% Recall: 67.1% F1: 60.26% | Precision: 52.18% Recall: 63.49% F1: 57.28%  |
+| FUNSD      | $${\color{red}Precision}$$: 54.69% $${\color{red}Recall}$$: 67.1% $${\color{red}F1}$$: 60.26% | $${\color{red}Precision}$$: 52.18% $${\color{red}Recall}$$: 63.49% $${\color{red}F1}$$: 57.28%  |
 
 
 In the next post, I will cover about the deployment steps of get High Availability performance
