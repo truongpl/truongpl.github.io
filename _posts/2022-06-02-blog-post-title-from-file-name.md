@@ -47,45 +47,40 @@ My cluster is ready for deployment:
 ![Cluster](https://github.com/truongpl/truongpl.github.io/raw/main/docs/assets/Cluster.png)
 
 #### Deployment
-For each microservice, I wrote two files: deployment.yaml and service.yaml. For ease of use, I decided to put all of the deployment into a repository like below:
+For each microservice, I wrote two files: deployment.yaml and service.yaml. For ease of use, I decided to put all of the deployment into a repository with structure below:
 
 ```bash
 .
 ├── cert
 │   ├── custom_tls.yaml
 │   └── letsencrypt.yaml
-├── cloud_platform
-│   ├── cloud_platform_service.yaml
-│   └── cloud_platform.yaml
-├── core
+├── document
+│   ├── document_service.yaml
+│   └── document.yaml
+├── ocr
+│   ├── ocr_service.yaml
+│   └── ocr.yaml
+├── layout
+│   ├── layout_service.yaml
+│   └── layout.yaml
 ├── dashboard
 │   ├── dashboard_service.yaml
 │   └── dashboard.yaml
 ├── demo
 │   ├── demo_service.yaml
 │   └── demo.yaml
-├── gpu_platform
-│   ├── gpu_platform_service.yaml
-│   └── gpu_platform.yaml
 ├── ingress
 │   ├── ingress_backup.yaml
 │   └── ingress.yaml
-├── LICENSE
-├── line_item
-│   ├── line_item_service.yaml
-│   └── line_item.yaml
-├── ocr
-│   ├── ocr_platform_service.yaml
-│   └── ocr_platform.yaml
+├── serving
+│   ├── serving_service.yaml
+│   └── serving.yaml
 ├── redis
 │   └── redis.yaml
 ├── secret
 │   └── secret.yaml
-├── timeout_imagepull
-│   └── config_map.yaml
 ├── time_slicing
 │   └── time_slicing.yaml
-├── troubleshoot.guide
 └── website
     ├── website_service.yaml
     └── website.yaml
@@ -95,10 +90,10 @@ Each service, except the Tensorflow Serving, use the Flask + Gunicorn stacks. De
 
 ![Component](https://github.com/truongpl/truongpl.github.io/raw/main/docs/assets/Component.png)
 
-The main idea is that each endpoint will have a service that serves the endpoints business, each service will handle the call to AI Interface to get Model predictions, post process the data and insert the record to database.
+The main idea is that each endpoint will have a service that serves the endpoints business, each service will handle the call to AI Service (OCR Service and Layout Service) to get Model predictions, post process the data and insert the record to database.
 
 
-A sample deployment.yaml
+A sample deployment.yamls
 ```
 apiVersion: apps/v1
 kind: Deployment
