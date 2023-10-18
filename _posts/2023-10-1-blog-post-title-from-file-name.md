@@ -10,4 +10,4 @@ This take home test requires two weeks to tackle the problem. The dataset is the
 
 
 ### Solutions
-I use this repository [Solutions](https://github.com/truongpl/hometest). to share my practical ML work and solutions. If you find it helpful, please consider giving it a star 🌟. Thank you! 😊
+I use this repository [Solutions](https://github.com/truongpl/hometest) to share my practical ML work and solutions. If you find it helpful, please consider giving it a star 🌟. Thank you!
