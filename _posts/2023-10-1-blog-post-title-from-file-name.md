@@ -14,9 +14,9 @@ Below is the test requirements:
 This take home test requires two weeks to tackle the problem. The dataset is the the [Microsoft Azure Predictive Maintenance](https://www.kaggle.com/datasets/arnabbiswas1/microsoft-azure-predictive-maintenance) dataset. I have dissmissed the company name.
 
 Below is the test requirements:
-![Page_1](https://github.com/truongpl/hometest/blob/main/assets/HT1_P1.png)
-![Page_2](https://github.com/truongpl/hometest/blob/main/assets/HT1_P2.png)
+![Page_4](https://github.com/truongpl/hometest/blob/main/assets/HT1_P1.png)
+![Page_5](https://github.com/truongpl/hometest/blob/main/assets/HT1_P2.png)
 
 
 ### Solutions
-I use this repository ![Solutions](https://github.com/truongpl/hometest). to share my practical ML work and solutions. If you find it helpful, please consider giving it a star 🌟. Thank you! 😊
+I use this repository [Solutions](https://github.com/truongpl/hometest). to share my practical ML work and solutions. If you find it helpful, please consider giving it a star 🌟. Thank you! 😊
